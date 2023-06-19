@@ -27,14 +27,20 @@ const PodcastListItem = ({ item, index }) => {
       <div className="d-flex justify-content-center d-flex align-items-center position-relative">
         <img
           src={image}
+          alt={title}
           className="rounded-circle border object-fit-cover"
-          style={{ marginBottom: "-5rem", width: "50%", aspectRatio: "1/1" }}
+          style={{
+            marginBottom: "-5rem",
+            width: "50%",
+            aspectRatio: "1/1",
+            cursor: "pointer",
+          }}
           onClick={() => handleRedirect(item)}
         />
       </div>
       <div
         className="card"
-        style={{ position: "revert" }}
+        style={{ position: "revert", cursor: "pointer" }}
         onClick={() => handleRedirect(item)}
       >
         <div

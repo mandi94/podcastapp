@@ -47,6 +47,7 @@ const PodcastView = () => {
       }
     };
     fetchPodcasts();
+    // eslint-disable-next-line 
   }, [searchTerm]);
 
   return (

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import CloseIcon from "@material-ui/icons/Close";
 
 const SearchButton = ({ setSearchTerm, totalResults, searchTerm }) => {
