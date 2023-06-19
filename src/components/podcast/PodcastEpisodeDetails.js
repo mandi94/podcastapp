@@ -1,5 +1,4 @@
 import React from "react";
-const BASE_URL = "https://cors-anywhere.herokuapp.com/";
 
 const PodcastEpisodeDetails = ({ episode }) => {
   const title = episode?.trackName;

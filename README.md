@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# Podcast App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a single-page application for managing podcasts. It allows you to view a list of podcasts, access podcast details, and play individual episodes.
+
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone <repository-url>
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd podcast-app
+   ```
+
+3. Install the dependencies:
+
+   ```bash
+   npm install
+   ```
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, you can run the following scripts:
 
-### `npm start`
+    start:dev: Starts the application in development mode.
+    build:dev: Builds the application for development.
+    start:prod: Builds the application for production and serves the optimized build files.
+    build:prod: Builds the application for production.
+    test: Runs the test suite.
+    eject: Ejects the application from Create React App, allowing further customization.
+   
+## Development Mode
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To start the application in development mode, run:
+ ```bash
+npm run start:dev
+```
+Open http://localhost:3000 in your browser to view the app.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Production Mode
 
-### `npm test`
+To build and run the application in production mode, run:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm run start:prod
+```
+Usage
 
-### `npm run build`
+   1. On the home page, you will see a list of podcasts.
+   2. Click on a podcast to view its details and a list of episodes.
+   3. Select an episode to view its details and play the audio.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Dependencies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This application utilizes the following dependencies:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    @material-ui/core: Material-UI library for UI components.
+    @material-ui/icons: Material-UI library for icons.
+    @testing-library/jest-dom: Library for DOM testing utilities.
+    @testing-library/react: Library for testing React components.
+    @testing-library/user-event: Library for simulating user events in tests.
+    axios: Promise-based HTTP client for making API requests.
+    bootstrap: CSS framework for styling.
+    cors-anywhere: Proxy server for bypassing CORS restrictions.
+    react: JavaScript library for building user interfaces.
+    react-bootstrap: React integration for Bootstrap UI framework.
+    react-dom: React library for DOM rendering.
+    react-router-dom: React library for routing.
+    react-scripts: Set of scripts for building React applications.
+    web-vitals: Library for measuring web performance metrics.
