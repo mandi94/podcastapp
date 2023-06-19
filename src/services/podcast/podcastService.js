@@ -2,6 +2,10 @@ import axios from "axios";
 
 const BASE_URL = "https://cors-anywhere.herokuapp.com/https://itunes.apple.com";
 
+/**
+ * Get 100 top podcast us 
+ */
+
 export async function getTopPodcasts({ limit, searchTerm }) {
   try {
     const response = await axios.get(
@@ -16,6 +20,11 @@ export async function getTopPodcasts({ limit, searchTerm }) {
   }
 }
 
+/**
+ * Get podcast details
+ */
+
+
 export async function getPodcastDetails(podcastId) {
   try {
     const response = await axios.get(`${BASE_URL}/lookup?id=${podcastId}`);
@@ -25,6 +34,10 @@ export async function getPodcastDetails(podcastId) {
     throw error;
   }
 }
+
+/**
+ * Get podcast episodes list
+ */
 
 export async function getEpisodes(podcastId) {
   try {
