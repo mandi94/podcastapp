@@ -23,8 +23,10 @@ const PodcastEpisodesList = ({ episodes, podcastId }) => {
 
   return (
     <div className="card">
-      <div className="card-body overflow-auto">
-        <h5 className="card-title">Episodes: {episodesCount}</h5>
+      <div className="card-body overflow-auto ">
+        <div className="">
+          <h4 className="card-title">Episodes: {episodesCount}</h4>
+        </div>
         <table className="table table-hover h-100 overflow-auto">
           <thead>
             <tr>
