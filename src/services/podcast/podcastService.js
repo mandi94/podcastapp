@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://itunes.apple.com";
+const BASE_URL = "https://cors-anywhere.herokuapp.com/https://itunes.apple.com";
 
 export async function getTopPodcasts({ limit, searchTerm }) {
   try {
@@ -9,8 +9,7 @@ export async function getTopPodcasts({ limit, searchTerm }) {
         searchTerm ? "&term=" + searchTerm : ""
       }/genre=1310/json`
     );
-    const topPodcasts = response.data;
-    return topPodcasts;
+    return response.data;
   } catch (error) {
     console.error("Error fetching top podcasts:", error);
     throw error;
@@ -20,11 +19,6 @@ export async function getTopPodcasts({ limit, searchTerm }) {
 export async function getPodcastDetails(podcastId) {
   try {
     const response = await axios.get(`${BASE_URL}/lookup?id=${podcastId}`);
-    // const response = await axios.get(
-    //   `https://api.allorigins.win/get?url=${encodeURIComponent(
-    //     `${BASE_URL}/lookup?id=${podcastId}`
-    //   )}`
-    // );
     return response.data;
   } catch (error) {
     console.error(`Error fetching podcast details for ID ${podcastId}:`, error);
@@ -37,11 +31,6 @@ export async function getEpisodes(podcastId) {
     const response = await axios.get(
       `${BASE_URL}/lookup?id=${podcastId}&media=podcast&entity=podcastEpisode`
     );
-    // const response = await axios.get(
-    //   `https://api.allorigins.win/get?url=${encodeURIComponent(
-    //     `${BASE_URL}/lookup?id=${podcastId}`
-    //   )}`
-    // );
     return response.data;
   } catch (error) {
     console.error(`Error fetching podcast details for ID ${podcastId}:`, error);
@@ -56,11 +45,6 @@ export async function getEpisodes(podcastId) {
 export async function getEpisodeDetails(podcastId) {
   try {
     const response = await axios.get(`${BASE_URL}/us/lookup?id=${podcastId}`);
-    // const response = await axios.get(
-    //   `https://api.allorigins.win/get?url=${encodeURIComponent(
-    //     `${BASE_URL}/lookup?id=${podcastId}`
-    //   )}`
-    // );
     return response.data;
   } catch (error) {
     console.error(`Error fetching podcast details for ID ${podcastId}:`, error);
