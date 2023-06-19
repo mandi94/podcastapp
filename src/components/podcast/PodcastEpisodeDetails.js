@@ -1,4 +1,5 @@
 import React from "react";
+const BASE_URL = "https://cors-anywhere.herokuapp.com/";
 
 const PodcastEpisodeDetails = ({ episode }) => {
   const title = episode?.trackName;
@@ -12,6 +13,10 @@ const PodcastEpisodeDetails = ({ episode }) => {
         )
     : "No description";
 
+  const audioSrc = `https://api.allorigins.win/raw?url=${encodeURIComponent(
+    episode?.episodeUrl
+  )}`;
+
   return (
     <div className="card">
       <div className="card-body">
@@ -22,10 +27,15 @@ const PodcastEpisodeDetails = ({ episode }) => {
         />
       </div>
       <div className="card-footer">
-        <audio controls className="w-100">
-          <source src={episode?.episodeUrl} type="audio/mp3" />
-          Your browser does not support the audio element.
-        </audio>
+        {episode?.episodeUrl && (
+          <audio controls className="w-100">
+            <source src={audioSrc} type={"audio/mp3"} />
+            Your browser does not support the audio element.
+          </audio>
+        )}
+        {!episode?.episodeUrl && (
+          <p>Your browser does not support the audio element.</p>
+        )}
       </div>
     </div>
   );

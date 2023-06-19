@@ -15,15 +15,16 @@ const PodcastView = () => {
       const cachedTimestamp = localStorage.getItem("podcastListTimestamp");
 
       // If the list exists and is not expired (within 24 hours)
-      if (searchTerm?.length <= 0 && cachedList && cachedTimestamp) {
+      if (!searchTerm && cachedList && cachedTimestamp) {
         const timestamp = Number(cachedTimestamp);
         const currentTime = Date.now();
         const twentyFourHoursInMilliseconds = 24 * 60 * 60 * 1000;
 
         // If it's within the 24-hour window, use the cached list
         if (currentTime - timestamp < twentyFourHoursInMilliseconds) {
-          setPodcasts(JSON.parse(cachedList));
-          setTotalResults(podcasts.length);
+          const podcastList = JSON.parse(cachedList);
+          setPodcasts(podcastList);
+          setTotalResults(podcastList?.length);
           return;
         }
       }
@@ -32,7 +33,7 @@ const PodcastView = () => {
       try {
         const fetchedPodcasts = await getTopPodcasts({ searchTerm });
         // Store the fetched list and timestamp in local storage
-        if (searchTerm?.length <= 0) {
+        if (!searchTerm) {
           localStorage.setItem(
             "podcastList",
             JSON.stringify(fetchedPodcasts?.feed?.entry)
@@ -47,7 +48,7 @@ const PodcastView = () => {
       }
     };
     fetchPodcasts();
-    // eslint-disable-next-line 
+    // eslint-disable-next-line
   }, [searchTerm]);
 
   return (
