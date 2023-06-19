@@ -13,6 +13,7 @@ const PodcastEpisodeDetails = ({ episode }) => {
         )
     : "No description";
 
+  // Im case of use a cors plugin remove the remove from the audioSrc  all the code different to episode?.episodeUrl
   const audioSrc = `https://api.allorigins.win/raw?url=${encodeURIComponent(
     episode?.episodeUrl
   )}`;
