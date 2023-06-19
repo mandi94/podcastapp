@@ -3,11 +3,10 @@ import { useParams } from "react-router-dom";
 import PodcastDetails from "../components/podcast/PodcastDetails";
 import PodcastEpisodesList from "../components/podcast/PodcastEpisodesList";
 import {
-  getPodcastDetails,
   getEpisodes,
 } from "../services/podcast/podcastService";
 
-const PodcastDetailsView = (props) => {
+const PodcastDetailsView = () => {
   const { podcastId } = useParams();
 
   const [podcastsDetails, setPodcastsDetails] = useState(null);
@@ -62,7 +61,7 @@ const PodcastDetailsView = (props) => {
     };
 
     fetchPodcasts();
-  }, []); // Empty dependency array to fetch the list only once on mount
+  }, [podcastId]); 
 
   return (
     <div className="container mt-4">

@@ -1,9 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const PodcastDetails = ({ item }) => {
-  const image = item?.["im:image"][2].label;
-  const podcastName = item?.["im:name"].label;
+  const image = item?.["im:image"]?.[2].label;
+  const podcastName = item?.["im:name"]?.label;
   const author = item?.["im:artist"].label
     ?.replace(/\n/g, "<br>")
     .replace(/\\"/g, '"')

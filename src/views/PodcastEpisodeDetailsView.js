@@ -3,9 +3,8 @@ import { useParams } from "react-router-dom";
 import PodcastDetails from "../components/podcast/PodcastDetails";
 import PodcastEpisodeDetails from "../components/podcast/PodcastEpisodeDetails";
 
-const PodcastEpisodeDetailsView = ({}) => {
+const PodcastEpisodeDetailsView = () => {
   const { podcastId, episodeId } = useParams();
-
   const [podcastsDetails, setPodcastsDetails] = useState(null);
   const [episodeDetails, setEpisodeDetails] = useState(null);
 
@@ -22,7 +21,7 @@ const PodcastEpisodeDetailsView = ({}) => {
       }
     };
     fetchPodcasts();
-  }, []);
+  }, [podcastId, episodeId]);
 
   return (
     <div className="container mt-4">
@@ -30,7 +29,6 @@ const PodcastEpisodeDetailsView = ({}) => {
         <div className="col-lg-3">
           <PodcastDetails item={podcastsDetails} />
         </div>
-
         <div className="col-lg-8">
           <PodcastEpisodeDetails episode={episodeDetails} />
         </div>
